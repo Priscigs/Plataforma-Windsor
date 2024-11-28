@@ -25,14 +25,18 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  flex-direction: column; /* Asegura que los componentes se apilen verticalmente */
+  min-height: 100vh; /* Ocupa toda la altura de la pantalla */
   min-width: 320px;
-  min-height: 100vh;
+  background-color: var(--background-color);
 }
 
 h1 {
-  font-size: 3.2em;
+  font-size: 2.5em;
   line-height: 1.1;
+  margin: 0;
+  padding: 0;
+  text-align: center;
 }
 
 button {
@@ -52,6 +56,104 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* NAVBAR */
+nav {
+  background-color: #333;
+  color: white;
+  padding: 1rem;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+}
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+}
+nav ul li a:hover {
+  color: #646cff;
+}
+
+/* HERO */
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  height: 100vh; /* Ocupa toda la altura de la pantalla */
+  background: url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
+  background-size: cover; /* Asegura que la imagen de fondo se ajuste correctamente */
+}
+header h1 {
+  color: white;
+  font-size: 2.5em;
+  margin-bottom: 1rem;
+}
+header p {
+  color: rgba(255, 255, 255, 0.87);
+  font-size: 1.2em;
+  margin-bottom: 1.5rem;
+}
+header a {
+  display: inline-block;
+  background-color: #646cff;
+  color: white;
+  padding: 0.8em 1.5em;
+  border-radius: 0.5em;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+header a:hover {
+  background-color: #535bf2;
+}
+
+/* RESPONSIVE ADJUSTMENTS */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2em;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header h1 {
+    font-size: 1.8em;
+  }
+
+  header p {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5em;
+  }
+
+  header h1 {
+    font-size: 1.5em;
+  }
+
+  header p {
+    font-size: 0.9em;
+  }
+
+  header a {
+    font-size: 0.9em;
+    padding: 0.5em 1em;
+  }
 }
 
 @media (prefers-color-scheme: light) {
